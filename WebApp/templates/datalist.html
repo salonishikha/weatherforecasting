@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecasting</title>
+</head>
+<body>
+{% block body %}
+
+    {% block content %}
+
+
+<a class="btn btn-info" href="/predict/">Get Predictions</a>
+
+<table>
+    <tr>
+        <th>dew_pt</th>
+        <th>QFE</th>
+        <th>LC</th>
+        <th>TC</th>
+        <th>DRY</th>
+        <th>RH</th>
+        <th>WET</th>
+        <th>month</th>
+    </tr>
+    {% for item in query_results %}
+    <tr>
+        <td>{{ item.dew_pt }}</td>
+        <td>{{ item.QFE }}</td>
+        <td>{{ item.LC }}</td>
+        <td>{{ item.TC }}</td>
+        <td>{{ item.DRY }}</td>
+        <td>{{ item.RH }}</td>
+        <td>{{ item.WET }}</td>
+        <td>{{ item.month }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
+{% endblock body %}
+</body>
+
+</html>
